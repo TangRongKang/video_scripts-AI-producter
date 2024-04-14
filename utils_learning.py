@@ -24,7 +24,7 @@ def generate_script(subject, video_length,
             '''{wikipedia_search}'''""")
         ]
     )
-    model = ChatOpenAI(openai_api_key=api_key, temperature=creativity,model = "gpt-3.5-turbo")
+    model = ChatOpenAI(openai_api_key=api_key,openai_api_base= "https://api.aigc369.com/v1" ,temperature=creativity,model = "gpt-3.5-turbo")
     #将提示模板传入model
     title_chain = title_template | model
     script_chain = script_template | model
